@@ -22,7 +22,7 @@ const defaultDestruction = {
 const PostDetails = () => {
   const { id = "" } = useParams();
   const { data: post, isLoading } = useGetPostById(id || "");
-  const { mutateAsync: deletePost, isPending: isDeleting } = useDeletePost();
+  const { mutateAsync: deletePost } = useDeletePost();
   const {
     creator: { $id: creatorId, imageUrl: creatorImg, name: creatorName },
     location,
@@ -40,7 +40,7 @@ const PostDetails = () => {
   const isUserPost = userId === creatorId;
 
   const handleDeletePost = async () => {
-    const deleteThePost = await deletePost({ postId: id, imageId });
+    await deletePost({ postId: id, imageId });
   };
 
   return (

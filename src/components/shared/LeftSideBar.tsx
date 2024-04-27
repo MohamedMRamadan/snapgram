@@ -7,11 +7,7 @@ import { sidebarLinks } from "@/constants";
 import { INavLink } from "@/types";
 
 const LeftSideBar = () => {
-  const {
-    mutateAsync: signOut,
-    isSuccess,
-    isPending: isSigningOut,
-  } = useSignOutAccount();
+  const { mutateAsync: signOut, isSuccess } = useSignOutAccount();
   const navigate = useNavigate();
   const {
     user: { id, imageUrl, username, name },

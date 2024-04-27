@@ -8,7 +8,6 @@ import { checkIsLiked } from "@/lib/utils";
 import { Models } from "appwrite";
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
-import { Button } from "../ui/button";
 import { useLocation } from "react-router-dom";
 
 type postStatsProps = {

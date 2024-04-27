@@ -15,12 +15,7 @@ const Explore = () => {
   const depouncedValue = useDebounce(searchValue, 500);
   const { ref, inView } = useInView();
 
-  const {
-    data: posts,
-    hasNextPage,
-    fetchNextPage,
-    isLoading: isLoadingPosts,
-  } = useGetPosts();
+  const { data: posts, hasNextPage, fetchNextPage } = useGetPosts();
 
   const { data: searchedPosts, isLoading: isLoadingSearchedPosts } =
     useSearchPosts(depouncedValue);

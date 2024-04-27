@@ -5,11 +5,7 @@ import { useEffect } from "react";
 import { useUserContext } from "@/context/AuthContext";
 
 const Topbar = () => {
-  const {
-    mutateAsync: signOut,
-    isSuccess,
-    isPending: isSigningOut,
-  } = useSignOutAccount();
+  const { mutateAsync: signOut, isSuccess } = useSignOutAccount();
   const navigate = useNavigate();
   const {
     user: { id, imageUrl },
