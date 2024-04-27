@@ -7,7 +7,7 @@ function AuthLayout() {
   return (
     <>
       {isAuthenticated ? (
-        <Navigate replace to="/" />
+        <Navigate to="/" />
       ) : (
         <>
           <section className="h-100 flex flex-1 items-center justify-center py-10">
