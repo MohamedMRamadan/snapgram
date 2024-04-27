@@ -93,7 +93,7 @@ export async function createPost(post: INewPost) {
       throw Error;
     }
 
-    const tags = post.tags?.replace(/ /g, "").split(",");
+    const tags = post.tags?.replace?.(/ /g, "").split(",");
     const newPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postsCollectionId,
@@ -247,7 +247,7 @@ export async function updatePost(post: IUpdatePost) {
       }
       image = { ...image, imageUrl, imageId: uploadedFile.$id };
     }
-    const tags = post.tags?.replace(/ /g, "").split(",");
+    const tags = post.tags?.replace?.(/ /g, "").split(",");
 
     const updateCurrentPost = await databases.updateDocument(
       appwriteConfig.databaseId,
